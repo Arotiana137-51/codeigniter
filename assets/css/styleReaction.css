@@ -1,0 +1,57 @@
+
+.reaction
+{
+	position: relative;
+	width: 70px;
+	height: 70px;
+	background: #212532;
+	border-radius: 10px;
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: 0.5;
+	transition-delay: 0.8s;
+}
+.reaction.active
+{
+	width: 200px;
+	height: 200px;
+	transition-delay: 0s; 
+}
+
+.reaction span
+{
+	position: absolute;
+	width: 7px;
+	height: 7px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: white;
+	border-radius: 50%;
+	transform: translate(calc(12px * var(--x)),calc(12px * var(--y)));
+	transition: transform 0.5s, width 0.5, height 0.5 background 0.5s;
+	transition-delay: calc(0.1s * var(--i));
+}
+
+.reaction.active span
+{
+	width: 45px;
+	height: 45px;
+	background: #333849;
+	transform: translate(calc(60px * var(--x)),calc(60px * var(--y)));
+}
+
+.reaction span img
+{
+	transition: 0.5s;
+	width: 0;
+	height: 0;
+}
+
+.reaction.active span img
+{
+	height: 20px;
+	width: 20px;
+}
